@@ -4,5 +4,7 @@ export default defineNuxtConfig({
   routeRules: {
     // all routes will be background revalidated (ISR) at most every 60 seconds
     "/**": { isr: 60 },
+    "/dynamic": { isr: false },
+    "/fast": { isr: 1 },
   },
 });
