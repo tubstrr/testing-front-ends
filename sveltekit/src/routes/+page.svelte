@@ -46,7 +46,7 @@
 </script>
 
 <section class="page">
-  <h1>Basic ToDo (SvelteKit)</h1>
+  <h1>Basic ToDo (SvelteKit - ISR)</h1>
   <div class="container">
     {#if loading}
       <div class="loading">Loading...</div>
