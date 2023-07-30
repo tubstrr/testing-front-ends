@@ -28,7 +28,7 @@
 
 <template>
   <section class="page">
-    <h1>Basic ToDo (Nuxt3 - ISG)</h1>
+    <h1>Basic ToDo (Nuxt3 - ISR)</h1>
     <div class="container">
       <Transition name="fade">
         <div v-if="loading" class="loading">Loading...</div>
