@@ -1,6 +1,5 @@
 <script>
 // @ts-nocheck
-
   export let data;
   
   let title = '';
@@ -18,6 +17,7 @@
       if (todo.id === id) todo.done = !todo.done;
       return todo;
     });
+    await revalidate();
 
     loading = false;
   }
@@ -28,6 +28,7 @@
     await fetch(`https://jonknoll.dev/wp-json/todo/v1/remove/?id=${id}`)
       .then((res) => res.json());
     data.todos = data.todos.filter((todo) => todo.id !== id);
+    await revalidate();
 
     loading = false;
   }
@@ -40,8 +41,19 @@
     
     data.todos = [{ id: add.id, title: add.title, done: false }, ...data.todos];
     title = '';
+    await revalidate();
     
     loading = false;
+  }
+
+  const revalidate = async () => {
+    await fetch(window.location.href, {
+      "method": "GET",
+      "headers": {
+            "x-prerender-revalidate": "vNTexBuv7u9rqBHdqPkysmFr99WYcMPz"
+      }
+    })
+    .then((res) => res.text())
   }
 </script>
 
