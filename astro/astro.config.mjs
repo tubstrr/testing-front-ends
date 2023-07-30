@@ -10,7 +10,7 @@ export default defineConfig({
   adapter: vercel(),
   server: {
     headers: {
-      "Cache-Control": "s-maxage=1, stale-while-revalidate=59",
+      "Cache-Control": "s-maxage=1, stale-while-revalidate",
     },
   },
 });
