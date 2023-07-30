@@ -9,4 +9,9 @@ export default defineConfig({
       "@": path.resolve("src"), // Styles in src/styles will be accessible as '@/styles/whatever.scss'
     },
   },
+  server: {
+    headers: {
+      "Cache-Control": "s-maxage=1, stale-while-revalidate=59",
+    },
+  },
 });
