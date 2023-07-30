@@ -1,0 +1,18 @@
+:global(body) {
+  background: #dedede;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :global(h1) {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+  }
+  :global(*) {
+    font-family: "Nunito", sans-serif;
+  }
+}
